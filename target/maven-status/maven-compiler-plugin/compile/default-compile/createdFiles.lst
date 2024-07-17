@@ -1,0 +1,4 @@
+com\prjct\BasicApplication.class
+com\prjct\entity\Producto.class
+com\prjct\controller\ProductoController.class
+com\prjct\controller\PruebaController.class
