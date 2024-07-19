@@ -2,6 +2,8 @@ package com.prjct.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +13,17 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import com.prjct.entity.Products;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Setter
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "images")
 public class Images {
@@ -27,52 +40,4 @@ public class Images {
     @ManyToOne
     @JoinColumn(name = "id_products", nullable = false)
     private Products products;
-
-    
-	public Images() {
-		super();
-	}
-
-	public Images(int id_images, String image_path, String name, Products products) {
-		super();
-		this.id_images = id_images;
-		this.image_path = image_path;
-		this.name = name;
-		this.products = products;
-	}
-
-	public int getId_images() {
-		return id_images;
-	}
-
-	public void setId_images(int id_images) {
-		this.id_images = id_images;
-	}
-
-	public String getImage_path() {
-		return image_path;
-	}
-
-	public void setImage_path(String image_path) {
-		this.image_path = image_path;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Products getProducts() {
-		return products;
-	}
-
-	public void setProducts(Products products) {
-		this.products = products;
-	}
-
-    // Getters y Setters para la relación
-    
 }
